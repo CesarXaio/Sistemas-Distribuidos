@@ -41,12 +41,12 @@ public class EmpleadoBean extends AbstractBean {
     @Column(name = "tipoEmpleado", nullable = true)
     private String tipoEmpleado;
 
-    /*
+
     // Relación con Facturación-Entrenador
     @OneToMany(mappedBy = "entrenador")
     private List<FacturaEmpleadoBean> facturasEntrenador;
 
     // Relación con Asignación de Entrenadores por Disciplina
     @OneToMany(mappedBy = "entrenador")
-    private List<AsignacionEntrenadorBean> asignacionesEntrenador;*/
+    private List<AsignacionEntrenadorBean> asignacionesEntrenador;
 }

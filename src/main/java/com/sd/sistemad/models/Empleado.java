@@ -1,8 +1,6 @@
 package com.sd.sistemad.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sd.sistemad.beans.asignacion.AsignacionEntrenadorBean;
-import com.sd.sistemad.beans.facturacion.FacturaEmpleadoBean;
+
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -23,14 +21,17 @@ public class Empleado {
     private String horaFin;
     private String tipoEmpleado;
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @JoinColumn(name = "asignacionid")
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<AsignacionEntrenadorBean> detalles = new ArrayList<>();
-    //private List<FacturaEmpleadoBean> facturasEntrenador;
-    //private List<AsignacionEntrenadorBean> asignacionesEntrenador;
+    @OneToMany(mappedBy = "empleado")
+    private List<Entrenador> entrenador;
 
-    // Constructor, getters y setters aquí
+
+    public List<Entrenador> getEntrenadores() {
+        return entrenador;
+    }
+
+    public void setEntrenadores(List<Entrenador> entrenador) {
+        this.entrenador = entrenador;
+    }
 
     public Long getEmpleadoID() {
         return empleadoID;
@@ -105,17 +106,17 @@ public class Empleado {
         this.asignacionesEntrenador = asignacionesEntrenador;
     }
     */
-
+/*
     public List<AsignacionEntrenadorBean> getDetalles() {
         return detalles;
     }
 
     public void setDetalles(List<AsignacionEntrenadorBean> detalles) {
         this.detalles = detalles;
-    }
+    }*/
 
     public Empleado() {
 
     }
-// Asegúrate de tener un constructor por defecto, getters y setters para todas las propiedades.
+
 }
