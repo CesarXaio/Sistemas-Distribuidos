@@ -2,9 +2,11 @@ package com.sd.sistemad.models;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "Entrenador")
-public class Entrenador {
+public class Entrenador implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long entrenadorID;

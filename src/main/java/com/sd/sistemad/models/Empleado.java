@@ -3,13 +3,14 @@ package com.sd.sistemad.models;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
 @Table(name = "Empleado")
-public class Empleado {
+public class Empleado implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long empleadoID;

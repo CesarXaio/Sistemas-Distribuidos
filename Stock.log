@@ -1,0 +1,28 @@
+2023-11-02T09:03:25.695-03:00  INFO 29620 --- [main] com.sd.sistemad.DistriApplication        : Starting DistriApplication using Java 19.0.1 with PID 29620 (C:\Users\cesar\OneDrive\Desktop\7mo Semestre\Sistema Distribuidos\Distri\target\classes started by cesar in C:\Users\cesar\OneDrive\Desktop\7mo Semestre\Sistema Distribuidos\Distri)
+2023-11-02T09:03:25.701-03:00  INFO 29620 --- [main] com.sd.sistemad.DistriApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-11-02T09:03:26.261-03:00  INFO 29620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-02T09:03:26.262-03:00  INFO 29620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-02T09:03:26.405-03:00  INFO 29620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 1 JPA repository interfaces.
+2023-11-02T09:03:26.418-03:00  INFO 29620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-02T09:03:26.419-03:00  INFO 29620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-11-02T09:03:26.430-03:00  INFO 29620 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sd.sistemad.repositories.IEmpleadoRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-11-02T09:03:26.431-03:00  INFO 29620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2023-11-02T09:03:26.900-03:00  INFO 29620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-11-02T09:03:26.910-03:00  INFO 29620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-02T09:03:26.911-03:00  INFO 29620 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-02T09:03:26.991-03:00  INFO 29620 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-02T09:03:26.991-03:00  INFO 29620 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1253 ms
+2023-11-02T09:03:27.144-03:00  INFO 29620 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-02T09:03:27.208-03:00  INFO 29620 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-02T09:03:27.210-03:00  INFO 29620 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-02T09:03:27.493-03:00  INFO 29620 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-02T09:03:27.525-03:00  INFO 29620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-02T09:03:27.689-03:00  INFO 29620 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a9bce99
+2023-11-02T09:03:27.691-03:00  INFO 29620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-02T09:03:27.732-03:00  WARN 29620 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-02T09:03:28.627-03:00  INFO 29620 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-02T09:03:28.776-03:00  INFO 29620 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-02T09:03:29.298-03:00  WARN 29620 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-02T09:03:29.793-03:00  INFO 29620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-11-02T09:03:29.800-03:00  INFO 29620 --- [main] com.sd.sistemad.DistriApplication        : Started DistriApplication in 4.46 seconds (process running for 5.067)
+2023-11-02T09:03:56.575-03:00  INFO 29620 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'

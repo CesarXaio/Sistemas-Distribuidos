@@ -1,8 +1,9 @@
 package com.sd.sistemad.beans.empleado;
 
 
-import com.sd.sistemad.beans.asignacion.AsignacionEntrenadorBean;
+;
 import com.sd.sistemad.beans.base.AbstractBean;
+import com.sd.sistemad.beans.deporte.DeporteBean;
 import com.sd.sistemad.beans.facturacion.FacturaEmpleadoBean;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -41,12 +42,12 @@ public class EmpleadoBean extends AbstractBean {
     @Column(name = "tipoEmpleado", nullable = true)
     private String tipoEmpleado;
 
-
+/*
     // Relación con Facturación-Entrenador
     @OneToMany(mappedBy = "entrenador")
     private List<FacturaEmpleadoBean> facturasEntrenador;
 
     // Relación con Asignación de Entrenadores por Disciplina
     @OneToMany(mappedBy = "entrenador")
-    private List<AsignacionEntrenadorBean> asignacionesEntrenador;
+    private List<DeporteBean> deporteBeans;*/
 }
