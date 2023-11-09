@@ -21,25 +21,25 @@ public class EmpleadoBean extends AbstractBean {
     @Column(name = "empleadoid", nullable = false, unique = true)
     private Long empleadoID;
 
-    @Column(name = "nombre", nullable = true)
+    @Column(name = "nombre")
     private String nombreEmpleado;
 
-    @Column(name = "apellido", nullable = true)
+    @Column(name = "apellido")
     private String apellido;
 
-    @Column(name = "correo", nullable = true)
+    @Column(name = "correo")
     private String correoElectronico;
 
-    @Column(name = "telefono", nullable = true)
+    @Column(name = "telefono")
     private String telefono;
 
-    @Column(name = "horaInicio", nullable = true)
+    @Column(name = "horaInicio")
     private String horaInicio;
 
-    @Column(name = "horaFin", nullable = true)
+    @Column(name = "horaFin")
     private String horaFin;
 
-    @Column(name = "tipoEmpleado", nullable = true)
+    @Column(name = "tipoEmpleado")
     private String tipoEmpleado;
 
 

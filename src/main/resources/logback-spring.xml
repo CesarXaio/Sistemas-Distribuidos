@@ -15,13 +15,22 @@
             <AppenderRef ref="Console"/>
         </Logger>
     </Loggers>
+    <!-- Ejemplo de configuración Logback -->
+    <configuration>
+        <!-- ... otras configuraciones ... -->
+        <logger name="com.sd.sistemasd.service.empleado.EmpleadoServiceImpl" level="info"/>
+        <!-- ... otras configuraciones ... -->
+    </configuration>
+    <logger name="org.springframework.cache" level="DEBUG"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%date [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-
+    <Root level="debug">
+        <AppenderRef ref="Console"/>
+    </Root>
     <root level="WARN">
         <appender-ref ref="FILE" />
         <appender-ref ref="CONSOLE" />

@@ -19,7 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Optional;
-
+//Comento el cache porque me genera errores ahora
 @Service
 public class EmpleadoServiceImpl implements IEmpleadoService{
     @Autowired
@@ -34,7 +34,16 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     @Override
     public EmpleadoDTO createEmpleado(EmpleadoDTO empleadoDTO) {
+        /*Esto usamos para sumular un rollback por error
+        if (true) {
+            // Simular un error
+            logger.error("Simulación de error: Esta condición siempre es falsa");
+            throw new RuntimeException("Simulación de error: Esta excepción se lanza a propósito");
+        }
+        */
         try {
+            logger.debug("Iniciando transacción para crear empleado...");
+            System.out.println("Creando empleado");
             EmpleadoBean empleado = new EmpleadoBean();
             empleado.setNombreEmpleado(empleadoDTO.getNombreEmpleado());
             empleado.setApellido(empleadoDTO.getApellido());
@@ -46,7 +55,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 
             // Guardar el empleado en la base de datos
             empleado = empleadoDAO.save(empleado);
-
+            logger.debug("Transacción para crear empleado completada con éxito.");
             // Verificar si el deporteID es válido
             if (empleadoDTO.getDeporteID() != null) {
                 Optional<DeporteBean> deporteOptional = deporteDAO.findById(empleadoDTO.getDeporteID());
@@ -74,7 +83,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
     //Este metodo es de solo lectura
     @Transactional(readOnly = true)
     @Override
-    @Cacheable(cacheNames = "empleadoCache", key = "#id")
+    //@Cacheable(cacheNames = "empleadoCache", key = "#id")
     public EmpleadoDTO getEmpleadoById(Long id) {
         EmpleadoBean empleado = empleadoDAO.findById(id).orElse(null);
         if (empleado != null) {
@@ -88,7 +97,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
     //Este metodo es de solo lectura
     @Transactional(readOnly = true)
     @Override
-    @Cacheable(cacheNames = "empleadoCache")
+    //@Cacheable(cacheNames = "empleadoCache")
     public Page<EmpleadoDTO> getAllEmpleados(Pageable pageable) {
         Page<EmpleadoBean> empleadoPage = empleadoDAO.findAll(pageable);
         return empleadoPage.map(this::convertToDTO);
@@ -96,7 +105,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     @Override
-    @CachePut(cacheNames = "empleadoCache", key = "#id")
+   // @CachePut(cacheNames = "empleadoCache", key = "#id")
     public EmpleadoDTO updateEmpleado(Long id, EmpleadoDTO empleadoDTO) {
         EmpleadoBean empleado = empleadoDAO.findById(id).orElse(null);
         if (empleado == null) {

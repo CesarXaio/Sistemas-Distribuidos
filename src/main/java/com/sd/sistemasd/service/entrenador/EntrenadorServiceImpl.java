@@ -18,7 +18,7 @@ public class EntrenadorServiceImpl {
     private EntrenadorDAO entrenadorDAO;
 
     @Transactional(readOnly = true)
-    @Cacheable(cacheNames = "EntrenadorCache", key = "#id")
+   // @Cacheable(cacheNames = "EntrenadorCache", key = "#id")
     public EntrenadorDTO getAsignacionEntrenadorById(Long asignacionID) {
         AsignacionEntrenadorBean asignacion = entrenadorDAO.findById(asignacionID).orElse(null);
         if (asignacion != null) {

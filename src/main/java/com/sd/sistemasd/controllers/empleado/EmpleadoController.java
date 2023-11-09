@@ -6,13 +6,12 @@ import com.sd.sistemasd.utils.Setting;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/empleados")
@@ -22,17 +21,16 @@ public class EmpleadoController {
     private IEmpleadoService empleadoService;
 
     @PostMapping
-    public ResponseEntity<?> createEmpleado (@RequestBody EmpleadoDTO empleadoDTO){
+    public ResponseEntity<?> createEmpleado(@RequestBody EmpleadoDTO empleadoDTO) {
         try {
             EmpleadoDTO createEmpleado = empleadoService.createEmpleado(empleadoDTO);
-            System.out.println("Empleado creado");
             return new ResponseEntity<>(createEmpleado, HttpStatus.CREATED);
-
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("Error al crear el empleado", e);
-            return new ResponseEntity<>("error500", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>( "Error al crear el Empleado",HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
     @GetMapping("/{id}")
     public EmpleadoDTO getEmpleadoById(@PathVariable Long id){
         return empleadoService.getEmpleadoById(id);
@@ -41,10 +39,11 @@ public class EmpleadoController {
 
 
     @GetMapping("/page/{page}")
-    public List<EmpleadoDTO> getAllEmpleados(@PathVariable(name = "page") int page) {
+    public Page<EmpleadoDTO> getAllEmpleados(@PathVariable(name = "page") int page) {
         int size = Setting.PAGE_SIZE;
         Pageable pageable = PageRequest.of(page, size);
-        return empleadoService.getAllEmpleados(pageable).getContent();
+        return empleadoService.getAllEmpleados(pageable);
+        //En caso de que haya problemas futuros, agregar getContent();q
     }
 
     @PutMapping("/{id}")

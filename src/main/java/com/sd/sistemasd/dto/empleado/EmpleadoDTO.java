@@ -2,9 +2,11 @@ package com.sd.sistemasd.dto.empleado;
 
 import com.sd.sistemasd.dto.BaseDTO;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class EmpleadoDTO extends BaseDTO {
     private Long empleadoID;
@@ -17,4 +19,9 @@ public class EmpleadoDTO extends BaseDTO {
     private String tipoEmpleado;
     private Long deporteID;
     //private List<String> entrenador;
+
+    public EmpleadoDTO() {
+    }
+
+
 }
