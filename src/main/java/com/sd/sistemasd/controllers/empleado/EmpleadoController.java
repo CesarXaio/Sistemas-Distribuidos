@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/empleados")
+@CrossOrigin
 public class EmpleadoController {
     private static final Logger logger = LoggerFactory.getLogger(EmpleadoController.class);
     @Autowired

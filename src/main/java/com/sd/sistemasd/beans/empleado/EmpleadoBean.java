@@ -24,6 +24,9 @@ public class EmpleadoBean extends AbstractBean {
     @Column(name = "nombre")
     private String nombreEmpleado;
 
+//    @Column(name = "password")
+//    private String password;
+
     @Column(name = "apellido")
     private String apellido;
 

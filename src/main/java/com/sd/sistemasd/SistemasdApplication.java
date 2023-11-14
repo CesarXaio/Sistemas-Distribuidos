@@ -12,6 +12,7 @@ public class SistemasdApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SistemasdApplication.class, args);
+
 	}
 
 }

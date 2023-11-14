@@ -34,13 +34,8 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     @Override
     public EmpleadoDTO createEmpleado(EmpleadoDTO empleadoDTO) {
-        /*Esto usamos para sumular un rollback por error
-        if (true) {
-            // Simular un error
-            logger.error("Simulación de error: Esta condición siempre es falsa");
-            throw new RuntimeException("Simulación de error: Esta excepción se lanza a propósito");
-        }
-        */
+
+
         try {
             logger.debug("Iniciando transacción para crear empleado...");
             System.out.println("Creando empleado");
@@ -140,7 +135,9 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
     private EmpleadoDTO convertToDTO(EmpleadoBean empleado){
         EmpleadoDTO dto = new EmpleadoDTO();
         dto.setEmpleadoID(empleado.getEmpleadoID());
+        dto.setNombreEmpleado(empleado.getNombreEmpleado());
         dto.setApellido(empleado.getApellido());
+        dto.setCorreoElectronico(empleado.getCorreoElectronico());
         dto.setTelefono(empleado.getTelefono());
         dto.setHoraInicio(empleado.getHoraInicio());
         dto.setHoraFin(empleado.getHoraFin());
