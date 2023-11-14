@@ -2363,3 +2363,9 @@ Consider defining a bean of type 'com.sd.sistemasd.config.JwtAuthenticationEntry
 2023-11-14 16:17:24,063 [restartedMain] INFO  c.sd.sistemasd.SistemasdApplication - Started SistemasdApplication in 5.009 seconds (process running for 5.545)
 2023-11-14 16:23:18,963 [http-nio-8085-exec-7] INFO  c.s.s.utils.TransactionLoggerAspect - Inicia transacción en el método: getAllEmpleados
 2023-11-14 16:23:18,983 [http-nio-8085-exec-7] INFO  c.s.s.utils.TransactionLoggerAspect - Commit en el método: getAllEmpleados
+2023-11-14 16:42:23,186 [restartedMain] INFO  c.sd.sistemasd.SistemasdApplication - Starting SistemasdApplication using Java 19.0.1 with PID 19464 (C:\Users\cesar\OneDrive\Desktop\sistemasd\target\classes started by cesar in C:\Users\cesar\OneDrive\Desktop\sistemasd)
+2023-11-14 16:42:23,187 [restartedMain] DEBUG c.sd.sistemasd.SistemasdApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2023-11-14 16:42:23,187 [restartedMain] INFO  c.sd.sistemasd.SistemasdApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-14 16:42:25,606 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14 16:42:26,948 [restartedMain] DEBUG c.s.s.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2023-11-14 16:42:28,607 [restartedMain] INFO  c.sd.sistemasd.SistemasdApplication - Started SistemasdApplication in 5.784 seconds (process running for 6.429)
