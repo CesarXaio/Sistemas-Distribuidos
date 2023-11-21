@@ -1,25 +1,29 @@
 package com.sd.sistemasd.dto.empleado;
 
 import com.sd.sistemasd.dto.BaseDTO;
+//import jakarta.validation.constraints.Email;
+//import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class EmpleadoDTO extends BaseDTO {
     private Long empleadoID;
-    private String nombreEmpleado;
-    private String apellido;
-    private String correoElectronico;
+    private String nombre;
     private String telefono;
-    private String horaInicio;
-    private String horaFin;
-    private String tipoEmpleado;
-    private Long deporteID;
-    //private List<String> entrenador;
-
+    private String cedula;
+    @NotNull
+    @Email
+    private String email;
+    @NotNull
+    private String password;
+    @NotNull
+    private String role;
     public EmpleadoDTO() {
     }
 

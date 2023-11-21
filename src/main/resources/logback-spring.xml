@@ -21,19 +21,19 @@
         <logger name="com.sd.sistemasd.service.empleado.EmpleadoServiceImpl" level="info"/>
         <!-- ... otras configuraciones ... -->
     </configuration>
-    <logger name="org.springframework.cache" level="DEBUG"/>
+    <logger name="org.springframework.cache" level="ERROR"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-    <Root level="debug">
+    <Root level="ERROR">
         <AppenderRef ref="Console"/>
     </Root>
     <root level="WARN">
         <appender-ref ref="FILE" />
-        <appender-ref ref="CONSOLE" />
+<!--        <appender-ref ref="CONSOLE" />-->
     </root>
 </configuration>
 
