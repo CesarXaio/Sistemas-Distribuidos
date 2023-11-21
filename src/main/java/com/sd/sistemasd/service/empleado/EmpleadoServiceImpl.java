@@ -130,7 +130,9 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
         dto.setNombre(empleado.getNombre());
         dto.setEmail(empleado.getEmail());
         dto.setTelefono(empleado.getTelefono());
-        //dto.setRole(empleado.getRoles());
+        dto.setPassword(empleado.getPassword());
+        dto.setCedula(empleado.getCedula());
+        dto.setRole(empleado.getRoles().toString());
         return dto;
     }
 }
