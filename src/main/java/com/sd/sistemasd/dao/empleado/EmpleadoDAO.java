@@ -12,6 +12,7 @@ import java.util.Optional;
 public interface EmpleadoDAO extends JpaRepository<EmpleadoBean, Long> {
     Page<EmpleadoBean> findAll(Pageable pageable);
 
-    Optional<EmpleadoBean> findOneByCorreoElectronico(String correoElectronico);
+    Optional<EmpleadoBean> findByEmail(String email);
+
 
 }
