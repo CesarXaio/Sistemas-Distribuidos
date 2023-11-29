@@ -7,33 +7,36 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name = "facturacionEmpleado")
+@Table(name = "facturaEmpleado")
 @Data
 public class FacturaEmpleadoBean extends AbstractBean {
-    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "facturaEmpleadoid", nullable = false, unique = true)
-    private Long facturaEmpleadoID;
+    @Column(name = "facturaid", nullable = false, unique = true)
+    private Long facturaid;
 
-    @Column(name = "fechaFacturacion", nullable = true)
-    private Date fechaFacturacion;
+    @Column(name = "fecha", nullable = true)
+    private Date fecha;
 
-    @Column(name = "montoTotal", nullable = true)
-    private double montoTotal;
+    @Column
+    private String nombreEmpleado;
 
-    @Column(name = "estadoPago", nullable = true)
-    private boolean estadoPago;
+    @Column
+    private String rucEmpleado;
 
-    @Column(name = "fechaPago", nullable = true)
-    private Date fechaPago;
+    @Column(name = "total", nullable = true)
+    private double total;
 
     // Relación con Empleado
     @ManyToOne
     @JoinColumn(name = "empleadoid")
-    private EmpleadoBean entrenador;
+    private EmpleadoBean empleado;
+
+    @OneToMany(mappedBy = "facturaEmpleado", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<FacturaEmpleadoDetalleBean> detalles;
 
 }

@@ -40,13 +40,6 @@ public class ClienteBean extends AbstractBean {
 
 
 
-
-
-
-
-
-
-
     // Relación con Facturación-Cliente
     @OneToMany(mappedBy = "cliente")
     private Set<FacturaClienteBean> facturasCliente;

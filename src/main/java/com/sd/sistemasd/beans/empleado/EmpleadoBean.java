@@ -41,6 +41,9 @@ public class EmpleadoBean extends AbstractBean implements UserDetails {
     @Column(name = "cedula")
     private String cedula;
 
+    @Column(name = "rucEmpleado")
+    private String rucEmpleado;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleBean> roles;
@@ -50,7 +53,7 @@ public class EmpleadoBean extends AbstractBean implements UserDetails {
     private DeporteBean deporte;
 
     // Relación con Facturación-Entrenador
-    @OneToMany(mappedBy = "entrenador")
+    @OneToMany(mappedBy = "empleado")
     private List<FacturaEmpleadoBean> facturasEntrenador;
 
     // Relación con Asignación de Entrenadores por Disciplina
